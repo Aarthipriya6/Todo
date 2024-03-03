@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+    <title>Todo-Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="readAll()">
+    <div class="container">
+      <div class="notes">
+        <div class="note">
+          <h2>Notes</h2>
+        </div>
+        <ul class="list-container"></ul>
+        <div class="button">
+          <button class="btn new-btn" type="submit">New Note</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-icon hidden">
+      <ion-icon name="arrow-redo-outline" id="arrow"></ion-icon>
+    </div>
+    <div class="Cr-Up">
+      <div class="container-1 hidden">
+        <div class="notes1">
+          <div class="note1">
+            <h2>Notes</h2>
+            <ion-icon class="icon" name="close-circle-outline"></ion-icon>
+          </div>
+          <div class="list">
+            <input
+              type="text"
+              class="input-tittle"
+              placeholder="input-tittle"
+            />
+            <textarea
+              class="text"
+              name="my-note"
+              placeholder="write your note"
+            ></textarea>
+          </div>
+          <div class="button1">
+            <button class="btn1 new-btn1" type="button" onclick="create()">
+              ADD
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container-2 hidden">
+        <div class="notes1">
+          <div class="note1">
+            <h2>Notes</h2>
+            <ion-icon class="icon" name="close-circle-outline"></ion-icon>
+          </div>
+          <div class="list">
+            <input type="text" hidden class="id" />
+            <input type="text" class="uinput-tittle" />
+            <textarea class="utext" name="my-note"></textarea>
+          </div>
+          <div class="button1">
+            <button class="btn1 up-btn" type="button" onclick="update()">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

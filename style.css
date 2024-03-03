@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+body {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgb(59, 168, 211), rgb(65, 65, 233));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notes {
+  background-color: palegoldenrod;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.note h2 {
+  text-align: center;
+  background-color: rgb(255, 74, 74);
+  color: white;
+  padding: 6px 26px;
+  margin: 5px auto;
+  border-radius: 10%;
+  text-transform: uppercase;
+}
+.button {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  top: 90%;
+  left: 37%;
+}
+.btn {
+  background-color: green;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.store-data {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 32%;
+  left: 42%;
+}
+.list-container li input {
+  position: absolute;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  margin: 0px 0px 0px 10px;
+  cursor: pointer;
+}
+.list-container li {
+  list-style: none;
+  font-size: 17px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(218, 218, 218);
+  width: 250px;
+  position: relative;
+}
+.checked {
+  filter: blur(2px);
+}
+
+.list-container li label {
+  text-align: start;
+  margin-left: 20px;
+}
+
+.list-container p {
+  text-align: center;
+  display: none;
+}
+/* *************** */
+/* pop-up */
+/* *************** */
+.hidden {
+  display: none;
+}
+#arrow {
+  font-size: 100px;
+  border: none;
+  color: #fff;
+}
+.notes1 {
+  background-color: palegoldenrod;
+  width: 400px;
+  height: 70vh;
+  border-radius: 10px;
+  position: relative;
+}
+.note1 {
+  display: flex;
+  justify-content: space-between;
+}
+.note1 h2 {
+  text-align: center;
+  background-color: darkslateblue;
+  color: white;
+  padding: 10px 26px;
+  border-bottom-right-radius: 60%;
+}
+.icon {
+  font-size: 23px;
+  color: #4d4b4b;
+  cursor: pointer;
+}
+.button1 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+}
+.btn1 {
+  background-color: darkmagenta;
+  border: none;
+  padding: 10px 90px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  position: absolute;
+  top: 36%;
+  left: 15%;
+  flex-direction: column;
+}
+
+.list input {
+  width: 300px;
+  text-align: start;
+  padding: 10px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.list ::placeholder {
+  color: lightgray;
+}
+textarea {
+  padding: 0px 5px;
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+.para {
+  display: block;
+  background-color: darkmagenta;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.ul {
+  border: 3px solid green;
+  background-color: rgb(218, 218, 218);
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 20%;
+  right: 3%;
+  background-color: rgb(199, 189, 189);
+  padding: 5px 5px;
+  border-radius: 50%;
+}
+.icons:hover {
+  background-color: lightcoral;
+}
+
+@media (max-width: 500px) {
+  .notes {
+    width: 50vh;
+  }
+  .notes1 {
+    width: 60vh;
+  }
+  #arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 385px) {
+  .notes {
+    height: 100vh;
+  }
+  .notes1 {
+    height: 100vh;
+  }
+  #arrow {
+    display: none;
+  }
+  .list input {
+    width: 250px;
+  }
+  textarea {
+    width: 250px;
+  }
+}
