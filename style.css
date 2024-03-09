@@ -67,14 +67,15 @@ body {
   top: 32%;
   left: 20%;
 }
-.list-container li input {
+.list-container input {
   position: absolute;
-  top: 18px;
+  top: 15px;
   width: 18px;
   height: 18px;
-  left: 0;
+  left: 3px;
   margin: 0px 0px 0px 10px;
   cursor: pointer;
+  z-index: 9999;
 }
 .list-container li {
   list-style: none;
@@ -87,7 +88,8 @@ body {
   position: relative;
 }
 .checked {
-  filter: blur(2px);
+  filter: blur(1px);
+  color: green;
 }
 
 .list-container li label {
@@ -225,7 +227,7 @@ textarea {
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 425px) {
   body {
     width: 100%;
     max-width: 385px;
@@ -233,7 +235,7 @@ textarea {
   }
 
   .container {
-    width: 50vh;
+    width: 100vh;
   }
 
   .list-container {
@@ -241,6 +243,7 @@ textarea {
   }
   .notes {
     height: 100vh;
+    width: 108%;
   }
   .notes1 {
     height: 100vh;
@@ -257,5 +260,14 @@ textarea {
   }
   .btn1 {
     padding: 10px 65px;
+  }
+}
+
+@media (max-width: 385px) {
+  .notes {
+    width: 100%;
+  }
+  .notes1 {
+    width: 57vh;
   }
 }

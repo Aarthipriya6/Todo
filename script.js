@@ -9,17 +9,12 @@ const newbtn2 = document.querySelector(".up-btn");
 const editbtn = document.querySelector(".editbtn");
 const arrow = document.querySelector(".arrow-icon");
 const icon = document.querySelector(".icon");
+const icons = document.querySelector(".close-icon");
 const list = document.querySelector(".list");
 let inputtittle = document.querySelector(".input-tittle");
 let text = document.querySelector(".text");
 
-// let Todo = [
-//   // { id: 1, tittle: "sss", description: "aaa" },
-//   // { id: 2, tittle: "SSS", description: "AAA" },
-// ];
 let Todo = JSON.parse(localStorage.getItem("Todo")) || [];
-
-// let todo = JSON.parse(localStorage.getItem("Todo")) || [];
 
 function readAll() {
   localStorage.setItem("object", JSON.stringify(Todo));
@@ -32,14 +27,20 @@ function readAll() {
 
   objectData.map(
     (record) =>
-      (elements += `<li class='li' >
-      <input type='checkbox' class='input' id='${record.id}'>
-      <label for=${record.id} onclick ={edit(${record.id})}>${record.tittle}</label>
+      (elements += `
+      <input type='checkbox' class='input' id='${record.id}' onclick={check(${record.id})}>
+      
+      
+      <li class='li' for=${record.id} onclick = {edit(${record.id})} >
+      <label >${record.tittle}</label>
        <p>${record.description}</p>
-       <div class='icons'>
-       <ion-icon name="trash-outline" class='icon' onclick='{delet(${record.id})}'></ion-icon>
-       </div>
-     </li>`)
+      
+     </li>
+     <div class='icons'>
+     <ion-icon name="trash-outline" class='icon' onclick='{delet(${record.id})}'></ion-icon>
+     </div>
+     
+     `)
   );
   listContainer.innerHTML = elements;
 }
@@ -54,6 +55,14 @@ newbtn.addEventListener("click", function () {
 icon.addEventListener("click", function () {
   container.classList.remove("hidden");
   container1.classList.add("hidden");
+  container2.classList.add("hidden");
+  arrow.classList.add("hidden");
+});
+
+icons.addEventListener("click", function () {
+  container.classList.remove("hidden");
+  container1.classList.add("hidden");
+  container2.classList.add("hidden");
   arrow.classList.add("hidden");
 });
 
@@ -79,13 +88,12 @@ function delet(id) {
   Todo = Todo.filter((rec) => rec.id !== id);
   readAll();
 }
+function check() {
+  let input = document.querySelector(".input");
+  let li = document.querySelector(".li");
 
-let input = document.querySelector(".input");
-let li = document.querySelector(".li");
-
-listcontainer.addEventListener("click", function (e) {
-  e.target.parentElement.classList.toggle("checked");
-});
+  li.classList.toggle("checked");
+}
 
 function edit(id) {
   container.classList.add("hidden");
