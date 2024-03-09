@@ -235,7 +235,9 @@ textarea {
   }
 
   .container {
-    width: 100vh;
+    width: 60vh;
+    height: 100vh;
+    min-height: 100vh;
   }
 
   .list-container {
